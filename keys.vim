@@ -48,3 +48,4 @@ map <silent> <M-S-r> <Esc>:so $MYVIMRC<CR>
 " save
 imap <C-s> <ESC>:w<CR>
 nmap <C-s> :w<CR>
+

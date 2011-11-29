@@ -4,6 +4,9 @@ set go=0
 " line number
 set nu
 
+" map leader
+let mapleader = ","
+
 " runtimepath
 " set rtp+=$HOME/vim/runtime/
 
@@ -46,7 +49,7 @@ set sc  "showcmd
 
 " Vundle settings
 filetype off
-set rtp+=~/.vim/vundle
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -56,7 +59,11 @@ call vundle#rc()
 " Python
 Bundle 'klen/python-mode'
 
+
+Bundle 'vim-scripts/fcitx.vim'
+
 "Bundle 'jceb/vim-orgmode'
+Bundle 'hsitz/VimOrganizer'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'vim-scripts/EasyMotion'
@@ -67,10 +74,6 @@ Bundle 'altercation/vim-colors-solarized'
 "Bundle 'Shougo/neocomplcache'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'majutsushi/tagbar' 
-
-" webapi-vim used by googletasks-vim 
-"Bundle 'mattn/webapi-vim'
-"Bundle 'mattn/googletasks-vim'
 
 " vim-scripts bundles
 Bundle 'L9'
@@ -114,6 +117,7 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File=1
 
-
 " Keybindings
 source ~/.vim/keys.vim
+source ~/.vim/python.vim
+
