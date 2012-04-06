@@ -7,6 +7,13 @@ set nu
 " map leader
 let mapleader = ","
 
+" set font
+if hostname() == 'AppleDream.local'
+    set guifont=Monaco:h13
+elseif hostname() == 'dream'
+    set guifont=DejaVu\ Sans\ Mono\ 12
+endif
+
 " runtimepath
 " set rtp+=$HOME/vim/runtime/
 
@@ -46,78 +53,34 @@ set sc  "showcmd
 
 "nmap <F6> :cp<cr>
 "nmap <F7> :cn<cr>
-
-" Vundle settings
-filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-" Bundle 'gmarik/vundle'
-
-" Python
-Bundle 'klen/python-mode'
-
-
-Bundle 'vim-scripts/fcitx.vim'
-
-"Bundle 'jceb/vim-orgmode'
-Bundle 'hsitz/VimOrganizer'
-Bundle 'altercation/vim-colors-solarized'
-"Bundle 'jmcantrell/vim-virtualenv'
-"Bundle 'vim-scripts/EasyMotion'
-"Bundle 'vim-scripts/Engspchk'
-
-" vimproc used by neocomplcache
-"Bundle 'Shougo/vimproc'
-"Bundle 'Shougo/neocomplcache'
-Bundle 'scrooloose/nerdtree'
-"Bundle 'majutsushi/tagbar' 
-
-" vim-scripts bundles
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-"Bundle 'vimwiki'
-Bundle 'taglist.vim'
-
-filetype plugin indent on " required by vundle.
-
-" vim-notes
-"let g:notes_directory = '~/Nutstore/Notes'
+so ~/.vim/vundle.vim
 
 " vim-colors-solarized
 syntax enable
 if has('gui_running')
     set background=light 
+    colorscheme solarized
 else
-    set background=dark
+    "set background=dark
+    colorscheme evening
 endif
-colorscheme solarized
 
-" vim-virtualenv
-"let g:virtualenv_directory = $HOME.'/public_html'
-"let $VIRTUAL_ENV=g:virtualenv_directory.'/'.'env'
-" let g:virtualenv_auto_activate = 1 " time consuming
+" tagbar settings -----------------------------------------------------------
+nnoremap <silent> <F8> :TagbarToggle<CR>
+if hostname() == 'AppleDream.local'
+    let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+endif
 
-" vimwiki settings -----------------------------------------------------------
-"let g:vimwiki_list = [{'path':'~/Nutstore/vimwiki/', 'path_html':'~/Nutstore/vimwiki/public_html/'}] 
+" Python
+source ~/.vim/python.vim
 
-"remap
-" map <Leader>w <Plug>VimwikiIndex
-" map <Leader>wt <Plug>VimwikiTabIndex
-" map <Leader>i <Plug>VimwikiDiaryIndex
-" map <Leader>d <Plug>VimwikiMakeDiaryNote
-" map <Leader>dt <Plug>VimwikiTabMakeDiaryNote
+" neocomplcache
+source ~/.vim/neocomplcache.vim
 
-" vimwiki settings end -------------------------------------------------------
-"
-" taglist settings -----------------------------------------------------------
-nnoremap <silent> <F8> :TlistToggle<CR>
-let Tlist_Use_Right_Window = 1
-let Tlist_Show_One_File=1
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   exe "normal g`\"" |
+            \ endif
 
 " Keybindings
 source ~/.vim/keys.vim
-source ~/.vim/python.vim
-

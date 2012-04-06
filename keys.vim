@@ -36,14 +36,20 @@ map <silent> <M-n> <Esc>:tabnext<CR>
 map <silent> <M-S-n> <Esc>:tabnew<CR>
 map <silent> <M-S-c> <Esc>:tabclose<CR>
 
-" find files
+" command-t and fuzzyfinder
 map <silent> <C-x><C-f> <Esc>:FufFile<CR>
 map <silent> <C-x><C-b> <Esc>:FufBuffer<CR>
-
+nnoremap <silent> <Leader>t :CommandT<CR>
+" nnoremap <silent> <C-x>b :CommandTBuffer <CR>
+let g:fuf_modesDisable = []
+nnoremap <silent> <C-x>b :FufBuffer <CR>
+nnoremap <silent> <C-x><C-B> :FufMruFile<CR>
+nnoremap <silent> <C-x><C-C> :FufMruCmd<CR>
+"nnoremap <silent> <Leader>p :CommandT path<CR>
 
 " settings
-map <silent> <M-S-p> <Esc>:e $MYVIMRC<CR>
-map <silent> <M-S-r> <Esc>:so $MYVIMRC<CR>
+map <silent> <M-S-p> <Esc>:e ~/.vim/init.vim<CR>
+map <silent> <M-S-r> <Esc>:so ~/.vim/init.vim<CR>
 
 " save
 imap <C-s> <ESC>:w<CR>
