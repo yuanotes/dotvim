@@ -36,16 +36,10 @@ map <silent> <M-n> <Esc>:tabnext<CR>
 map <silent> <M-S-n> <Esc>:tabnew<CR>
 map <silent> <M-S-c> <Esc>:tabclose<CR>
 
-" command-t and fuzzyfinder
+" find files
 map <silent> <C-x><C-f> <Esc>:FufFile<CR>
 map <silent> <C-x><C-b> <Esc>:FufBuffer<CR>
-nnoremap <silent> <Leader>t :CommandT<CR>
-" nnoremap <silent> <C-x>b :CommandTBuffer <CR>
-let g:fuf_modesDisable = []
-nnoremap <silent> <C-x>b :FufBuffer <CR>
-nnoremap <silent> <C-x><C-B> :FufMruFile<CR>
-nnoremap <silent> <C-x><C-C> :FufMruCmd<CR>
-"nnoremap <silent> <Leader>p :CommandT path<CR>
+
 
 " settings
 map <silent> <M-S-p> <Esc>:e ~/.vim/init.vim<CR>
@@ -54,4 +48,16 @@ map <silent> <M-S-r> <Esc>:so ~/.vim/init.vim<CR>
 " save
 imap <C-s> <ESC>:w<CR>
 nmap <C-s> :w<CR>
+" tagbar
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
+" command-t
+nnoremap <silent> <Leader>t :CommandT<CR>
+" nnoremap <silent> <C-x>b :CommandTBuffer <CR>
+let g:fuf_modesDisable = []
+nnoremap <silent> <C-x>b :FufBuffer <CR>
+nnoremap <silent> <Leader>b :FufBuffer <CR>
+nnoremap <silent> <C-x><C-B> :FufMruFile<CR>
+nnoremap <silent> <C-x><C-C> :FufMruCmd<CR>
+
+"nnoremap <silent> <Leader>p :CommandT /path/to/project<CR>

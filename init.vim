@@ -50,10 +50,7 @@ set sc  "showcmd
 "autocmd FileType cpp nmap <F5> :w<cr>:exe ":set makeprg=g++\\\ -Wall\\\ -o\\\ ".expand("%:r")."\\\ ".expand("%")<cr>:make<cr><cr>:cw<cr>
 "autocmd FileType c nmap <F5> :w<cr>:exe ":set makeprg=gcc\\\ -Wall\\\ -o\\\ ".expand("%:r")."\\\ ".expand("%")<cr>:make<cr><cr>:cw<cr>
 "autocmd FileType c,cpp nmap <F8> :exe "!./".expand("%:r")<cr>
-
-"nmap <F6> :cp<cr>
-"nmap <F7> :cn<cr>
-so ~/.vim/vundle.vim
+so ~/.vim/vam.vim
 
 " vim-colors-solarized
 syntax enable
@@ -65,22 +62,18 @@ else
     colorscheme evening
 endif
 
+"
 " tagbar settings -----------------------------------------------------------
-nnoremap <silent> <F8> :TagbarToggle<CR>
 if hostname() == 'AppleDream.local'
     let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 endif
 
-" Python
+" Keybindings
 source ~/.vim/python.vim
-
-" neocomplcache
 source ~/.vim/neocomplcache.vim
+source ~/.vim/keys.vim
 
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \   exe "normal g`\"" |
             \ endif
-
-" Keybindings
-source ~/.vim/keys.vim
