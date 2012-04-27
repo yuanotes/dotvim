@@ -54,9 +54,8 @@ so ~/.vim/vam.vim
 
 " vim-colors-solarized
 syntax enable
-if has('gui_running')
-    set background=light 
-    colorscheme solarized
+if has('gui_running') || $TERM=='xterm-256color'
+    colorscheme zenburn
 else
     "set background=dark
     colorscheme evening
