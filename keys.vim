@@ -55,9 +55,9 @@ nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <Leader>t :CommandT<CR>
 " nnoremap <silent> <C-x>b :CommandTBuffer <CR>
 let g:fuf_modesDisable = []
-nnoremap <silent> <C-x>b :FufBuffer <CR>
 nnoremap <silent> <Leader>b :FufBuffer <CR>
-nnoremap <silent> <C-x><C-B> :FufMruFile<CR>
-nnoremap <silent> <C-x><C-C> :FufMruCmd<CR>
+nnoremap <silent> <Leader>f :FufFile <CR>
+nnoremap <silent> <Leader>r :FufMruFile<CR>
+nnoremap <silent> <Leader>c :FufMruCmd<CR>
 
-"nnoremap <silent> <Leader>p :CommandT /path/to/project<CR>
+nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>

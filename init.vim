@@ -76,3 +76,7 @@ autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \   exe "normal g`\"" |
             \ endif
+
+let g:jsbeautify = {"indent_size": 2, "indent_char": " "}
+autocmd FileType javascript set sw=2 ts=2 sts=2
+let g:jsbeautify_engine = "node"

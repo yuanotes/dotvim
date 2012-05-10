@@ -60,6 +60,7 @@ call SetupVAM()
     " Vim 7.0 users see BUGS section [3]
 call vam#ActivateAddons(['Command-T'],{'auto_install':1})
 call vam#ActivateAddons(['Python-mode-klen','fugitive', 'VimOrganizer','Zenburn','vim-less','Powerline','Tagbar'], {'auto_install':1})
-call vam#ActivateAddons(['vimproc','neocomplcache','neocomplcache-snippets-complete'], {'auto_install':1})
+call vam#ActivateAddons(['vimproc','neocomplcache','neocomplcache-snippets_complete'], {'auto_install':1})
 call vam#ActivateAddons(['L9','FuzzyFinder','YankRing'], {'auto_install':1})
 call vam#ActivateAddons(['ZenCoding'],{'auto_install':1})
+call vam#ActivateAddons(['vim-jsbeautify'],{'auto_install':1})
