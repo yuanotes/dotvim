@@ -39,6 +39,7 @@ set incsearch
 
 " indent and tab
 set autoindent
+set cindent
 set tabstop=4		" tab
 set shiftwidth=4 	" autoindent tab 
 set expandtab		" spaces instead of tab
@@ -77,6 +78,4 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
-let g:jsbeautify = {"indent_size": 2, "indent_char": " "}
-autocmd FileType javascript set sw=2 ts=2 sts=2
 let g:jsbeautify_engine = "node"
