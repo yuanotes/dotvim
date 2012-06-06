@@ -1,0 +1,19 @@
+" keys
+nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>
+
+
+" VirtualENV for python-mode
+"let $VIRTUAL_ENV="path/to/virtualenv"
+
+
+" tagbar ctags path
+"let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+
+" guifont
+"set guifont=Monaco:h13 "Mac
+"set guifont=DejaVu\ Sans\ Mono\ 12 "Linux
+
+" runtimepath
+" set rtp+=$HOME/vim/runtime/
+
