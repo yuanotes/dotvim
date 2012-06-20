@@ -15,16 +15,13 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 set showcmd
+set shell=/bin/bash   " system() may be failed in fishfish
 
-source ~/.vim/vam.vim   "vim-addon-manager and extensions
+syntax on
+filetype plugin indent on
 
-" colorscheme
-syntax enable
-if has('gui_running') || $TERM=='xterm-256color'
-    colorscheme zenburn
-else
-    colorscheme evening
-endif
+" Color scheme
+colorscheme evening
 
 " go to last edit position when opening a file
 autocmd BufReadPost *
@@ -32,12 +29,17 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
+" vam settings
+source ~/.vim/vam.vim
+
 " other settings
 source ~/.vim/python.vim
 source ~/.vim/neocomplcache.vim
 source ~/.vim/keys.vim
-
+source ~/.vim/vam.vim
 
 if filereadable(expand("~/.vim/custom.vim"))
     source ~/.vim/custom.vim
 endif
+
+let s:body=system('uname -a 2>&1')

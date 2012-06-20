@@ -4,3 +4,4 @@
 vim-addons
 .zcache
 custom.vim
+.netrwhist
