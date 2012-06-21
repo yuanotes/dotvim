@@ -33,7 +33,6 @@ autocmd BufReadPost *
 source ~/.vim/vam.vim
 
 " other settings
-source ~/.vim/python.vim
 source ~/.vim/neocomplcache.vim
 source ~/.vim/keys.vim
 source ~/.vim/vam.vim

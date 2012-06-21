@@ -5,15 +5,24 @@ nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>
 " VirtualENV for python-mode
 "let $VIRTUAL_ENV="path/to/virtualenv"
 
+" colorscheme
+" if has('gui_running') || $TERM=='xterm-256color'
+"     colorscheme zenburn
+" endif
+
 
 " tagbar ctags path
 "let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
 
 " guifont
-"set guifont=Monaco:h13 "Mac
-"set guifont=DejaVu\ Sans\ Mono\ 12 "Linux
+"set guifont=Monaco:h14 "Mac
+"set guifont=DejaVu\ Sans\ Mono\ 14 "Linux
 
-" runtimepath
-" set rtp+=$HOME/vim/runtime/
 
+" python mode settings
+"let g:pymode_lint_checker='pyflakes'
+let g:python_highlight_all=1
+"let g:pymode_rope_guess_project=0
+"let g:pymode_lint_checker="pylint"
+"let g:pymode_lint = 0
