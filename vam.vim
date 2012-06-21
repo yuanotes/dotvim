@@ -62,4 +62,11 @@ call SetupVAM()
 let g:vim_addon_manager['auto_install'] = 1
 let g:vim_addon_manager['shell_commands_run_method'] = "system" 
 
-call vam#ActivateAddons(['github:klen/vim-jsmode', 'Python-mode-klen', 'Command-T', 'fugitive', 'VimOrganizer', 'Zenburn', 'vim-less', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neocomplcache-snippets_complete', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding'])
+call vam#ActivateAddons(['Command-T', 'fugitive', 'VimOrganizer', 'Zenburn', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neocomplcache-snippets_complete', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding'])
+
+let ft_addons = {
+    \ 'javascript': ['github:klen/vim-jsmode'],
+    \ 'python': ['Python-mode-klen'],
+    \ 'less': ['vim-less']
+    \ }
+au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
