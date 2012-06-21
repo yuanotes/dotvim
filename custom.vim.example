@@ -22,8 +22,8 @@ nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>
 
 " python mode settings
 "let g:pymode_lint_checker='pyflakes'
-let g:python_highlight_all=1
-let g:python_doc = 0    " doc in python mode sucks, use neocomplcache instead
+let g:pymode_run_key="<C-c><C-r>"
+let g:pymode_breakpoint_key="<C-c><C-b>"
 "let g:pymode_rope_guess_project=0
 "let g:pymode_lint_checker="pylint"
 "let g:pymode_lint = 0
