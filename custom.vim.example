@@ -27,3 +27,7 @@ let g:pymode_breakpoint_key="<C-c><C-b>"
 "let g:pymode_rope_guess_project=0
 "let g:pymode_lint_checker="pylint"
 "let g:pymode_lint = 0
+
+" omnicomplete
+" set completeopt="menuone"   " add preview if you want to view docstring of
+                            " python functions.
