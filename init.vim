@@ -15,6 +15,7 @@ set shiftwidth=4
 set expandtab
 set softtabstop=4
 set showcmd
+set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
 
 syntax on
@@ -40,5 +41,3 @@ source ~/.vim/vam.vim
 if filereadable(expand("~/.vim/custom.vim"))
     source ~/.vim/custom.vim
 endif
-
-let s:body=system('uname -a 2>&1')
