@@ -62,7 +62,7 @@ call SetupVAM()
 let g:vim_addon_manager['auto_install'] = 1
 let g:vim_addon_manager['shell_commands_run_method'] = "system" 
 
-call vam#ActivateAddons(['sudo','Command-T', 'fugitive', 'VimOrganizer', 'Zenburn', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neocomplcache-snippets_complete', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding'])
+call vam#ActivateAddons(['sudo','Command-T', 'fugitive', 'VimOrganizer', 'Zenburn', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neocomplcache-snippets_complete', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding', 'quickrun%3146'])
 
 let ft_addons = {
     \ 'javascript': ['github:klen/vim-jsmode'],
