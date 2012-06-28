@@ -17,6 +17,7 @@ set softtabstop=4
 set showcmd
 set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
+set laststatus=2    " show statusline if one window
 
 syntax on
 filetype plugin indent on
@@ -37,6 +38,12 @@ source ~/.vim/vam.vim
 source ~/.vim/neocomplcache.vim
 source ~/.vim/keys.vim
 source ~/.vim/vam.vim
+
+" powerline settings
+" Make sure you have patched font:
+" https://github.com/Lokaltog/vim-powerline/
+let g:Powerline_symbols = 'fancy'
+
 
 if filereadable(expand("~/.vim/custom.vim"))
     source ~/.vim/custom.vim
