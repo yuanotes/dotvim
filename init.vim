@@ -51,6 +51,8 @@ source ~/.vim/vam.vim
 " https://github.com/Lokaltog/vim-powerline/
 let g:Powerline_symbols = 'fancy'
 
+" QuickRun
+noremap <C-c><C-c> :QuickRun<CR>
 
 if filereadable(expand("~/.vim/custom.vim"))
     source ~/.vim/custom.vim
