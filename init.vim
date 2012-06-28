@@ -1,6 +1,5 @@
 set nocompatible    " not compatible with vi
 set guioptions=0    " no gui
-set number          " linenumber
 let mapleader = "," " map leader
 set modeline        " modelien mode
 set modelines=5     " detect modelines in 5 lines at head and tail 
@@ -18,6 +17,14 @@ set showcmd
 set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
 set laststatus=2    " show statusline if one window
+
+
+" line number tricks
+set number
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+autocmd FocusLost *   :set number              " only for GUI
+autocmd FocusGained * :set relativenumber      " only for GUI
 
 syntax on
 filetype plugin indent on
