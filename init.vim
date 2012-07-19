@@ -17,6 +17,7 @@ set showcmd
 set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
 set laststatus=2    " show statusline if one window
+set cursorline      " cursorline
 
 
 " line number tricks
@@ -45,6 +46,10 @@ source ~/.vim/vam.vim
 source ~/.vim/neocomplcache.vim
 source ~/.vim/keys.vim
 source ~/.vim/vam.vim
+
+" Zenburn settings
+let g:zenburn_force_dark_Background = 1
+
 
 " powerline settings
 " Make sure you have patched font:
