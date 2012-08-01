@@ -1,5 +1,4 @@
-Usage:
-    
+# Usage:
     mv ~/.vim  ~/.vim.backup
 
     git clone https://github.com/yuanotes/dotvim.git ~/.vim
