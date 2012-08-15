@@ -1,14 +1,15 @@
 " keys
 nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>
+set wildignore+=*.pyc,.git,dojo,dojox,dijit,docs
 
 
 " VirtualENV for python-mode
 "let $VIRTUAL_ENV="path/to/virtualenv"
 
 " colorscheme
-" if has('gui_running') || $TERM=='xterm-256color'
-"     colorscheme zenburn
-" endif
+if has('gui_running') || $TERM=='xterm-256color'
+     colorscheme zenburn
+endif
 
 
 " tagbar ctags path
@@ -27,7 +28,16 @@ let g:pymode_breakpoint_key="<C-c><C-b>"
 "let g:pymode_rope_guess_project=0
 "let g:pymode_lint_checker="pylint"
 "let g:pymode_lint = 0
+let g:pymode_folding = 0
+let g:jsmode_lint = 0
+let g:jsmode_folding = 0
+let g:jsmode_lint_config = "~/.jslint.rc"
+let g:syntastic_javascript_jslint_conf="--browser --regexp --es5 --nomen --evil --eqeq --plusplus --continue --forin --bitwise"
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 " omnicomplete
-" set completeopt="menuone"   " add preview if you want to view docstring of
+set completeopt="menuone"   " add preview if you want to view docstring of
                             " python functions.
+autocmd FileType html setlocal filetype=htmldjango sts=2 ts=2 sw=2
+autocmd BufNewFile,BufRead *.less setlocal filetype=less
