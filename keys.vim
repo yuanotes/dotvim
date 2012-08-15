@@ -16,3 +16,7 @@ nnoremap <silent> <Leader>f :FufFile <CR>
 nnoremap <silent> <Leader>b :FufBuffer <CR>
 nnoremap <silent> <Leader>r :FufMruFile<CR>
 nnoremap <silent> <Leader>c :FufMruCmd<CR>
+
+
+" sudo, which is useful
+cnoremap w!! w !sudo dd of=%
