@@ -18,14 +18,11 @@ set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
 set laststatus=2    " show statusline if one window
 set cursorline      " cursorline
+set hidden          " dont't save buffer when changing 
 
 
 " line number tricks
-set number
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-autocmd FocusLost *   :set number              " only for GUI
-autocmd FocusGained * :set relativenumber      " only for GUI
+set relativenumber
 
 syntax on
 filetype plugin indent on
@@ -55,9 +52,6 @@ let g:zenburn_force_dark_Background = 1
 " Make sure you have patched font:
 " https://github.com/Lokaltog/vim-powerline/
 let g:Powerline_symbols = 'fancy'
-
-" QuickRun
-noremap <C-c><C-c> :QuickRun<CR>
 
 if filereadable(expand("~/.vim/custom.vim"))
     source ~/.vim/custom.vim
