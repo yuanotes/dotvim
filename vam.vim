@@ -62,7 +62,7 @@ call SetupVAM()
 let g:vim_addon_manager['auto_install'] = 1
 let g:vim_addon_manager['shell_commands_run_method'] = "system" 
 
-call vam#ActivateAddons(['github:uggedal/go-vim', 'vim-octopress', 'The_NERD_Commenter', 'Syntastic','The_NERD_tree','sudo','Command-T', 'fugitive', 'vim-orgmode', 'Zenburn', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neosnippet', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding', 'quickrun%3146'])
+call vam#ActivateAddons(['github:uggedal/go-vim', 'vim-octopress', 'ctrlp', 'The_NERD_Commenter', 'Syntastic','The_NERD_tree','sudo','fugitive', 'vim-orgmode', 'Zenburn', 'Powerline', 'Tagbar', 'vimproc', 'neocomplcache', 'neosnippet', 'L9', 'FuzzyFinder', 'YankRing', 'ZenCoding', 'quickrun%3146'])
 
 let ft_addons = {
     \ 'javascript': ['vim-jsbeautify'],

@@ -1,6 +1,5 @@
 " keys
-nnoremap <silent> <Leader>p :CommandT $HOME/horizon<CR>
-set wildignore+=*.pyc,.git,dojo,dojox,dijit,docs
+set wildignore+=*.pyc,.git
 
 
 " VirtualENV for python-mode
