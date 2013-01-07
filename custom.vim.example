@@ -21,6 +21,9 @@ endif
 
 
 let g:ctrlp_map="<Leader>p"
+noremap <Leader>r :CtrlPMRU<CR>
+noremap <Leader>b :CtrlPBuffer<CR>
+
 
 
 " python mode settings
