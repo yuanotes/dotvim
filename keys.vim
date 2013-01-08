@@ -6,17 +6,13 @@ nmap <C-s> :w<CR>
 
 " tagbar
 nnoremap <silent> <F8> :TagbarToggle<CR>
-
-" command-t
-nnoremap <silent> <Leader>t :CommandT<CR>
-
-" nnoremap <silent> <C-x>b :CommandTBuffer <CR>
-let g:fuf_modesDisable = []
-nnoremap <silent> <Leader>f :FufFile <CR>
-nnoremap <silent> <Leader>b :FufBuffer <CR>
-nnoremap <silent> <Leader>r :FufMruFile<CR>
-nnoremap <silent> <Leader>c :FufMruCmd<CR>
-
+nnoremap <silent> <F4> :NERDTreeToggle<CR>
 
 " sudo, which is useful
 cnoremap w!! w !sudo dd of=%
+
+let g:ctrlp_map="<Leader>p"
+noremap <Leader>r :CtrlPMRU<CR>
+noremap <Leader>b :CtrlPBuffer<CR>
+noremap <Leader>f :CtrlPCurFile<CR>
+
