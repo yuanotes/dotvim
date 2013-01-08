@@ -12,7 +12,4 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 cnoremap w!! w !sudo dd of=%
 
 let g:ctrlp_map="<Leader>p"
-noremap <Leader>r :CtrlPMRU<CR>
-noremap <Leader>b :CtrlPBuffer<CR>
-noremap <Leader>f :CtrlPCurFile<CR>
 
