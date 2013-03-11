@@ -11,5 +11,11 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 " sudo, which is useful
 cnoremap w!! w !sudo dd of=%
 
+let g:fuf_modesDisable = []
+nnoremap <silent> <C-x><C-f> :FufFile<CR>
+nnoremap <silent> <C-x><C-b> :FufBuffer<CR>
+nnoremap <silent> <C-x><C-r> :FufMruFile<CR>
+nnoremap <silent> <C-x><C-c> :FufMruCMD<CR>
+
 let g:ctrlp_map="<Leader>p"
 

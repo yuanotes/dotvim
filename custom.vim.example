@@ -41,4 +41,8 @@ set completeopt="menuone"   " add preview if you want to view docstring of
                             " python functions.
 autocmd FileType html setlocal filetype=htmldjango sts=2 ts=2 sw=2
 autocmd BufNewFile,BufRead *.less setlocal filetype=less
+
+
+let g:yankring_history_dir=expand("%:p:h")
+
 " vim:ft=vim
