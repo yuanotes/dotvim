@@ -1,6 +1,7 @@
 " keys
 set wildignore+=*.pyc,.git
 
+nnoremap <silent> <Leader>t :CommandT ~/src/horizon<CR>
 
 " VirtualENV for python-mode
 "let $VIRTUAL_ENV="path/to/virtualenv"
