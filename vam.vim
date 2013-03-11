@@ -29,7 +29,8 @@ fun! SetupVAM()
   " let g:vim_addon_manager['drop_git_sources'] = !executable('git')
 
   " VAM install location:
-  let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
+  " let vam_install_path = expand('$HOME') . '/.vim/vim-addons'
+  let vam_install_path = expand('$MYVIMPATH') . '/vim-addons' 
   call EnsureVamIsOnDisk(vam_install_path)
   exec 'set runtimepath+='.vam_install_path.'/vim-addon-manager'
 
