@@ -16,5 +16,3 @@ nnoremap <silent> <C-x><C-f> :FufFile<CR>
 nnoremap <silent> <C-x><C-b> :FufBuffer<CR>
 nnoremap <silent> <C-x><C-r> :FufMruFile<CR>
 nnoremap <silent> <C-x><C-c> :FufMruCMD<CR>
-
-nnoremap <silent> <Leader>t :CommandT ~/src/horizon<CR>

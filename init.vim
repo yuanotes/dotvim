@@ -36,13 +36,16 @@ autocmd BufReadPost *
             \   exe "normal g`\"" |
             \ endif
 
+" Get vim path
+let $MYVIMPATH=expand("<sfile>:p:h")
+
 " vam settings
-source ~/.vim/vam.vim
+source $MYVIMPATH/vam.vim
 
 " other settings
-source ~/.vim/neocomplcache.vim
-source ~/.vim/keys.vim
-source ~/.vim/vam.vim
+source $MYVIMPATH/neocomplcache.vim
+source $MYVIMPATH/keys.vim
+source $MYVIMPATH/vam.vim
 
 " Zenburn settings
 let g:zenburn_force_dark_Background = 1
@@ -54,6 +57,6 @@ let g:zenburn_force_dark_Background = 1
 let g:Powerline_symbols = 'unicode'
 let g:Powerline_stl_path_style = 'full'
 
-if filereadable(expand("~/.vim/custom.vim"))
-    source ~/.vim/custom.vim
+if filereadable(expand("$MYVIMPATH/custom.vim"))
+    source $MYVIMPATH/custom.vim
 endif
