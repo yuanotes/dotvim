@@ -73,7 +73,7 @@ call vam#ActivateAddons([
     \ 'sudo',
     \ 'fugitive',
     \ 'Zenburn',
-    \ 'Powerline',
+    \ 'powerline',
     \ 'Tagbar',
     \ 'neocomplcache', 
     \ 'vimproc',

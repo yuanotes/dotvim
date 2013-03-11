@@ -54,8 +54,8 @@ let g:zenburn_force_dark_Background = 1
 " powerline settings
 " Make sure you have patched font:
 " https://github.com/Lokaltog/vim-powerline/
-let g:Powerline_symbols = 'unicode'
-let g:Powerline_stl_path_style = 'full'
+" powerline path
+set rtp+=$MYVIMPATH/vim-addons/powerline/powerline/bindings/vim/
 
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
