@@ -84,7 +84,7 @@ call vam#ActivateAddons([
 
 let ft_addons = {
     \ 'javascript': ['vim-jsbeautify'],
-    \ 'python': ['Python-mode-klen'],
+    \ 'python': ['jedi-vim'],
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
