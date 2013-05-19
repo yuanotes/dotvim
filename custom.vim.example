@@ -36,10 +36,7 @@ set completeopt="menuone"   " add preview if you want to view docstring of
 autocmd FileType html setlocal filetype=htmldjango sts=2 ts=2 sw=2
 autocmd BufNewFile,BufRead *.less setlocal filetype=less
 
-
-let g:yankring_history_dir=expand('<sfile>:p:h')
-
-let s:base_list = ['powerline', 'quickrun%3146', 'YankRing', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'FuzzyFinder', 'neocomplcache', 'vimproc', 'Syntastic']
+let s:base_list = ['quickrun%3146', 'YankRing', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'FuzzyFinder', 'neocomplcache', 'vimproc', 'Syntastic']
 let s:python_list = ['jedi-vim']
 let s:go_list = ['github:uggedal/go-vim']
 let s:web_list = ['ZenCoding', 'vim-less', 'vim-jsbeautify']

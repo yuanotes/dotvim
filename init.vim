@@ -50,20 +50,8 @@ source $MYVIMPATH/vam.vim
 " Zenburn settings
 let g:zenburn_force_dark_Background = 1
 
-
-" powerline settings
-" Make sure you have patched font:
-" https://github.com/Lokaltog/vim-powerline/
-" powerline path
-set rtp+=$MYVIMPATH/vim-addons/powerline/powerline/bindings/vim/
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
+" set yankring history directory.
+let g:yankring_history_dir=expand('<sfile>:p:h')
 
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
