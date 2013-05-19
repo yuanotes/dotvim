@@ -63,28 +63,10 @@ call SetupVAM()
 let g:vim_addon_manager['auto_install'] = 1
 let g:vim_addon_manager['shell_commands_run_method'] = "system" 
 
-call vam#ActivateAddons([
-    \ 'FuzzyFinder',
-    \ 'github:uggedal/go-vim', 
-    \ 'Command-T', 
-    \ 'The_NERD_Commenter',
-    \ 'Syntastic',
-    \ 'The_NERD_tree',
-    \ 'sudo',
-    \ 'fugitive',
-    \ 'Zenburn',
-    \ 'powerline',
-    \ 'Tagbar',
-    \ 'neocomplcache', 
-    \ 'vimproc',
-    \ 'YankRing',
-    \ 'ZenCoding',
-    \ 'quickrun%3146'
-    \ ])
-
-let ft_addons = {
-    \ 'javascript': ['vim-jsbeautify'],
-    \ 'python': ['jedi-vim'],
-    \ 'less': ['vim-less']
-    \ }
-au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
+" Lazy loading
+" let ft_addons = {
+"     \ 'javascript': ['vim-jsbeautify'],
+"     \ 'python': ['jedi-vim'],
+"     \ 'less': ['vim-less']
+"     \ }
+" au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor

@@ -22,13 +22,6 @@ endif
 
 
 " python mode settings
-"let g:pymode_lint_checker='pyflakes'
-let g:pymode_run_key="<C-c><C-r>"
-let g:pymode_breakpoint_key="<C-c><C-b>"
-"let g:pymode_rope_guess_project=0
-"let g:pymode_lint_checker="pylint"
-"let g:pymode_lint = 0
-let g:pymode_folding = 0
 let g:jsmode_lint = 0
 let g:jsmode_folding = 0
 let g:jsmode_lint_config = "~/.jslint.rc"
@@ -45,5 +38,12 @@ autocmd BufNewFile,BufRead *.less setlocal filetype=less
 
 
 let g:yankring_history_dir=expand('<sfile>:p:h')
+
+let s:base_list = ['powerline', 'quickrun%3146', 'YankRing', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'FuzzyFinder', 'neocomplcache', 'vimproc', 'Syntastic']
+let s:python_list = ['jedi-vim']
+let s:go_list = ['github:uggedal/go-vim']
+let s:web_list = ['ZenCoding', 'vim-less', 'vim-jsbeautify']
+let s:addon_list = s:base_list + s:python_list
+call vam#ActivateAddons(addons_list)
 
 " vim:ft=vim
