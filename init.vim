@@ -85,4 +85,4 @@ let s:addon_list = s:base_list + s:python_list
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
-call vam#ActivateAddons(addons_list)
+call vam#ActivateAddons(s:addon_list)
