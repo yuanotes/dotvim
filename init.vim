@@ -45,14 +45,44 @@ source $MYVIMPATH/vam.vim
 " other settings
 source $MYVIMPATH/neocomplcache.vim
 source $MYVIMPATH/keys.vim
-source $MYVIMPATH/vam.vim
 
 " Zenburn settings
 let g:zenburn_force_dark_Background = 1
+if has('gui_running') || $TERM=='xterm-256color'
+     colorscheme zenburn
+endif
 
-" set yankring history directory.
+" Set yankring history directory.
 let g:yankring_history_dir=expand('<sfile>:p:h')
+
+" Ignored while searching by Command-T
+set wildignore+=*.pyc,.git
+
+" tagbar ctags path
+"let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+
+" GUI font
+"set guifont=Monaco:h14 "Mac
+"set guifont=DejaVu\ Sans\ Mono\ 14 "Linux
+
+" Syntastic settings
+let g:syntastic_javascript_jslint_conf="--browser --regexp --es5 --nomen --evil --eqeq --plusplus --continue --forin --bitwise --predef define  --predef require"
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
+
+
+" JS beautify
+let g:jsbeautify = {"jslint_happy":"true"}
+" Addons list
+let s:base_list = ['The_NERD_tree', 'fugitive', 'Command-T', 'quickrun%3146', 'YankRing', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'FuzzyFinder', 'neocomplcache', 'vimproc', 'Syntastic']
+let s:python_list = ['jedi-vim']
+let s:go_list = ['github:uggedal/go-vim']
+let s:web_list = ['ZenCoding', 'vim-less', 'vim-jsbeautify']
+let s:addon_list = s:base_list + s:python_list
+
 
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
+call vam#ActivateAddons(addons_list)
