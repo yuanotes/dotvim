@@ -62,11 +62,3 @@ call SetupVAM()
 
 let g:vim_addon_manager['auto_install'] = 1
 let g:vim_addon_manager['shell_commands_run_method'] = "system" 
-
-" Lazy loading
-" let ft_addons = {
-"     \ 'javascript': ['vim-jsbeautify'],
-"     \ 'python': ['jedi-vim'],
-"     \ 'less': ['vim-less']
-"     \ }
-" au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
