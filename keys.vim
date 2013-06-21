@@ -31,4 +31,4 @@ nnoremap <silent> <C-x>m :UniteBookmarkAdd<CR>
 nnoremap <silent> <C-x><C-m> :Unite bookmark<CR>
 nnoremap <silent> <C-x><C-r> :<C-u>Unite grep:./:-iR:file<CR>
 nnoremap <silent> <C-x><C-y> :Unite history/yank<CR>
-nnoremap <silent> <C-x><C-t> :Unite tab<CR>
+nnoremap <silent> <C-x><C-t> :Unite -no-start-insert tab<CR>
