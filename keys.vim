@@ -26,7 +26,6 @@ elseif executable('ack-grep')
   let g:unite_source_grep_recursive_opt = ''
 endif
 nnoremap <silent> <C-x><C-f> :Unite file file_mru<CR>
-nnoremap <silent> <C-x><C-b> :Unite buffer:?<CR>
-nnoremap <silent> <C-x><C-c> :Unite command<CR>
+nnoremap <silent> <C-x><C-b> :Unite -quick-match buffer<CR>
 nnoremap <silent> <C-x><C-r> :<C-u>Unite grep:./:-iR:file<CR>
 nnoremap <silent> <C-x><C-y> :Unite history/yank<CR>
