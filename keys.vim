@@ -27,5 +27,7 @@ elseif executable('ack-grep')
 endif
 nnoremap <silent> <C-x><C-f> :Unite file file_mru<CR>
 nnoremap <silent> <C-x><C-b> :Unite -quick-match buffer<CR>
+nnoremap <silent> <C-x>m :UniteBookmarkAdd<CR>
+nnoremap <silent> <C-x><C-m> :Unite bookmark<CR>
 nnoremap <silent> <C-x><C-r> :<C-u>Unite grep:./:-iR:file<CR>
 nnoremap <silent> <C-x><C-y> :Unite history/yank<CR>
