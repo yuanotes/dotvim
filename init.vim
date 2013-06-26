@@ -45,6 +45,7 @@ source $MYVIMPATH/vam.vim
 " other settings
 source $MYVIMPATH/neocomplcache.vim
 source $MYVIMPATH/keys.vim
+source $MYVIMPATH/functions.vim
 
 " Ignored while searching by Command-T
 set wildignore+=*.pyc,.git
