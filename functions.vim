@@ -30,3 +30,8 @@ function! MyCallCommandT()
     endif
 endfunction
 nnoremap <silent> <Leader>t  :call MyCallCommandT()<CR>
+
+
+
+" Wrap fugitive to push 
+command! Gpush VimProcBang git push origin
