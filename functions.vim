@@ -16,13 +16,18 @@ def get_project_dir(path):
                 return None
     return path
 proj_dir = get_project_dir(vim.eval("a:path"))
-vim.command("let g:vim_proj_dir=\"%s\"" % (proj_dir or "0"))
+if proj_dir:
+    vim.command("let g:vim_proj_dir=\"%s\"" % proj_dir)
+else:
+    vim.command("let g:vim_proj_dir=0")
+
 EOF
 endfunction
 
 function! MyCallCommandT()
     let l:cur_dir = expand("%:p:h") 
     call MyGetProjectPath(l:cur_dir)
+    echo g:vim_proj_dir
     if exists("g:vim_proj_dir") && !empty(g:vim_proj_dir)
         execute "CommandT ".g:vim_proj_dir
     else
