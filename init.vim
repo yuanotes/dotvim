@@ -2,7 +2,7 @@ set nocompatible    " not compatible with vi
 set guioptions=0    " no gui
 let mapleader = "," " map leader
 set modeline        " modelien mode
-set modelines=5     " detect modelines in 5 lines at head and tail 
+set modelines=5     " detect modelines in 5 lines at head and tail
 set autochdir       " change work directory automatically
 set clipboard+=unnamed " set clipboard
 set ignorecase
@@ -18,7 +18,7 @@ set autoread        " auto reload buffer if the file is changed outside Vim
 set shell=/bin/bash   " system() may be failed in fishfish
 set laststatus=2    " show statusline if one window
 set cursorline      " cursorline
-set hidden          " dont't save buffer when changing 
+set hidden          " dont't save buffer when changing
 
 
 " line number tricks
@@ -74,6 +74,10 @@ let ft_addons = {
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
+
+" vim-jedi settins
+let g:jedi#popup_select_first = 0
+let g:jedi#use_tabs_not_buffers = 0
 
 " other settings
 source $MYVIMPATH/functions.vim
