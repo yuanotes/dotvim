@@ -66,7 +66,7 @@ let g:syntastic_warning_symbol='⚠'
 " JS beautify
 let g:jsbeautify = {"jslint_happy":"true"}
 " Addons list
-let s:addon_list = ['unite', 'Zenburn', 'The_NERD_tree', 'fugitive', 'Command-T', 'quickrun%3146', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'neocomplcache', 'vimproc', 'Syntastic']
+let s:addon_list = ['unite', 'Zenburn', 'The_NERD_tree', 'fugitive', 'Command-T', 'quickrun%3146', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'neocomplcache', 'vimproc', 'Syntastic', 'vim-neatstatus']
 
 call vam#ActivateAddons(s:addon_list)
 " Lazy loading

@@ -25,7 +25,8 @@ elseif executable('ack-grep')
   let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
   let g:unite_source_grep_recursive_opt = ''
 endif
-nnoremap <silent> <C-x><C-f> :<C-u>:UniteWithBufferDir file/new file file_mru<CR>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <silent> <C-x><C-f> :<C-u>:Unite file file_mru file/new<CR>
 nnoremap <silent> <C-x><C-b> :Unite -quick-match buffer<CR>
 nnoremap <silent> <C-x>m :UniteBookmarkAdd<CR>
 nnoremap <silent> <C-x><C-m> :Unite bookmark<CR>
