@@ -42,10 +42,6 @@ let $MYVIMPATH=expand("<sfile>:p:h")
 " vam settings
 source $MYVIMPATH/vam.vim
 
-" other settings
-source $MYVIMPATH/neocomplcache.vim
-source $MYVIMPATH/keys.vim
-source $MYVIMPATH/functions.vim
 
 " Ignored while searching by Command-T
 set wildignore+=*.pyc,.git
@@ -78,6 +74,11 @@ let ft_addons = {
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
+
+" other settings
+source $MYVIMPATH/neocomplcache.vim
+source $MYVIMPATH/keys.vim
+source $MYVIMPATH/functions.vim
 
 " Zenburn settings
 let g:zenburn_force_dark_Background = 1
