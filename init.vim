@@ -76,9 +76,12 @@ let ft_addons = {
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
 
 " other settings
+source $MYVIMPATH/functions.vim
 source $MYVIMPATH/neocomplcache.vim
 source $MYVIMPATH/keys.vim
-source $MYVIMPATH/functions.vim
+
+" Remove trailing whitespaces automatically
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Zenburn settings
 let g:zenburn_force_dark_Background = 1
