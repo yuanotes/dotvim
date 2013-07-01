@@ -70,7 +70,7 @@ let ft_addons = {
     \ 'go': ['github:uggedal/go-vim'],
     \ 'html': ['ZenCoding'],
     \ 'javascript': ['vim-jsbeautify'],
-    \ 'python': ['jedi-vim'],
+    \ 'python': ['jedi-vim', 'github:hynek/vim-python-pep8-indent'],
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
