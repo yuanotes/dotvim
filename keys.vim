@@ -30,6 +30,9 @@ nnoremap <silent> <C-x><C-f> :<C-u>:Unite file file_mru file/new<CR>
 nnoremap <silent> <C-x><C-b> :Unite -quick-match buffer<CR>
 nnoremap <silent> <C-x>m :UniteBookmarkAdd<CR>
 nnoremap <silent> <C-x><C-m> :Unite bookmark<CR>
-nnoremap <silent> <C-x><C-r> :<C-u>Unite grep:./:-iR:file<CR>
+nnoremap <silent> <C-x><C-r> :call MyProjectPathCommand('Unite grep:@proj_dir:-iR:', 'Unite grep:./:-iR:')<CR>
 nnoremap <silent> <C-x><C-y> :Unite history/yank<CR>
 nnoremap <silent> <C-x><C-t> :Unite -no-start-insert tab<CR>
+
+" CommandT mapping
+nnoremap <silent> <Leader>t  :call MyProjectPathCommand('CommandT @proj_dir', 'CommandT ./')<CR>

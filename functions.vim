@@ -24,18 +24,17 @@ else:
 EOF
 endfunction
 
-function! MyCallCommandT()
+function! MyProjectPathCommand(command_string, command_string_alt)
     let l:cur_dir = expand("%:p:h") 
     call MyGetProjectPath(l:cur_dir)
     echo g:vim_proj_dir
     if exists("g:vim_proj_dir") && !empty(g:vim_proj_dir)
-        execute "CommandT ".g:vim_proj_dir
+        let l:command_str = substitute(a:command_string, '@proj_dir', g:vim_proj_dir, 'g')
+        execute l:command_str
     else
-        execute "CommandT ./"
+        execute a:command_string_alt
     endif
 endfunction
-nnoremap <silent> <Leader>t  :call MyCallCommandT()<CR>
-
 
 
 " Wrap fugitive to push 
