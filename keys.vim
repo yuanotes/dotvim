@@ -27,7 +27,7 @@ elseif executable('ack-grep')
 endif
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap <silent> <C-x><C-f> :<C-u>:Unite file file_mru file/new<CR>
-nnoremap <silent> <C-x><C-b> :Unite -quick-match buffer<CR>
+nnoremap <silent> <C-x><C-b> :CommandTBuffer<CR>
 nnoremap <silent> <C-x>m :UniteBookmarkAdd<CR>
 nnoremap <silent> <C-x><C-m> :Unite bookmark<CR>
 nnoremap <silent> <C-x><C-r> :call MyProjectPathCommand('Unite grep:@proj_dir:-iR:', 'Unite grep:./:-iR:')<CR>
