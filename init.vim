@@ -62,9 +62,26 @@ let g:syntastic_warning_symbol='⚠'
 " JS beautify
 let g:jsbeautify = {"jslint_happy":"true"}
 " Addons list
-let s:addon_list = ['Conque_Shell', 'unite', 'Zenburn', 'The_NERD_tree', 'fugitive', 'Command-T', 'quickrun%3146', 'sudo', 'Tagbar', 'The_NERD_Commenter', 'neocomplcache', 'vimproc', 'Syntastic', 'vim-neatstatus']
+let s:addon_list = [
+    \'Conque_Shell',
+    \'unite',
+    \'Zenburn',
+    \'The_NERD_tree',
+    \'fugitive',
+    \'quickrun%3146',
+    \'sudo',
+    \'Tagbar',
+    \'The_NERD_Commenter',
+    \'neocomplcache',
+    \'vimproc',
+    \'Syntastic',
+    \'vim-neatstatus',
+    \'haskellmode-vim']
 
-call vam#ActivateAddons(s:addon_list)
+let s:sensitive_list = ['Command-T']
+
+call vam#ActivateAddons(s:addon_list + s:sensitive_list)
+
 " Lazy loading
 let ft_addons = {
     \ 'go': ['github:uggedal/go-vim'],
@@ -74,6 +91,17 @@ let ft_addons = {
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
+
+" Haskell related
+let g:haddock_browser = "chrome"
+let hs_highlight_delimiters = 1
+let hs_highlight_boolean = 1
+let hs_highlight_types = 1
+let hs_highlight_more_types = 1
+let hs_highlight_debug = 1
+let hs_allow_hash_operator = 1
+"let lhs_markup = tex
+
 
 " vim-jedi settins
 let g:jedi#popup_select_first = 0
