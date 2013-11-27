@@ -76,11 +76,10 @@ let s:addon_list = [
     \'vimproc',
     \'Syntastic',
     \'vim-neatstatus',
-    \'haskellmode-vim']
+    \'haskellmode-vim',
+    \'ctrlp']
 
-let s:sensitive_list = ['Command-T']
-
-call vam#ActivateAddons(s:addon_list + s:sensitive_list)
+call vam#ActivateAddons(s:addon_list)
 
 " Lazy loading
 let ft_addons = {
