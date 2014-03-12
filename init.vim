@@ -72,12 +72,15 @@ let s:addon_list = [
     \'sudo',
     \'Tagbar',
     \'The_NERD_Commenter',
-    \'neocomplcache',
-    \'vimproc',
     \'Syntastic',
     \'vim-neatstatus',
     \'haskellmode-vim',
-    \'ctrlp']
+    \'YouCompleteMe',
+    \'ctrlp',
+    \'github:marijnh/tern_for_vim']
+
+"    \'neocomplcache',
+"    \'vimproc',
 
 call vam#ActivateAddons(s:addon_list)
 
@@ -101,14 +104,13 @@ let hs_highlight_debug = 1
 let hs_allow_hash_operator = 1
 "let lhs_markup = tex
 
-
 " vim-jedi settins
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
 
 " other settings
 source $MYVIMPATH/functions.vim
-source $MYVIMPATH/neocomplcache.vim
+" source $MYVIMPATH/neocomplcache.vim
 source $MYVIMPATH/keys.vim
 
 " Remove trailing whitespaces automatically
