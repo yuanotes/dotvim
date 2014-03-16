@@ -19,7 +19,7 @@ set shell=/bin/bash   " system() may be failed in fishfish
 set laststatus=2    " show statusline if one window
 set cursorline      " cursorline
 set hidden          " dont't save buffer when changing
-
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 
 " line number tricks
 set relativenumber
@@ -28,7 +28,7 @@ syntax on
 filetype plugin indent on
 
 " Color scheme
-colorscheme evening
+"colorscheme evening
 
 " go to last edit position when opening a file
 autocmd BufReadPost *
@@ -93,14 +93,10 @@ let ft_addons = {
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
 
 " Haskell related
-let g:haddock_browser = "chrome"
-let hs_highlight_delimiters = 1
-let hs_highlight_boolean = 1
-let hs_highlight_types = 1
-let hs_highlight_more_types = 1
-let hs_highlight_debug = 1
-let hs_allow_hash_operator = 1
-"let lhs_markup = tex
+let g:haddock_browser = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+au BufEnter *.hs compiler ghc
+let g:ghc="/usr/bin/ghc"
+let g:haddock_indexfiledir="~/.dotvim/vim-addons/haskellmode-vim/"
 
 
 " vim-jedi settins
@@ -124,3 +120,4 @@ endif
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
+
