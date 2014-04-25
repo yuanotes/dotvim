@@ -47,10 +47,10 @@ source $MYVIMPATH/vam.vim
 set wildignore+=*.pyc,.git
 
 " GUI font
-if system("uname") == "Darwin"
-    set guifont=Monaco:h14 "Mac
+if has('gui_macvim')
+    set guifont=Menlo\ Regular:h18 "Mac
     let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-elseif system("uname") == "Linux"
+elseif has("gui_gtk")
     set guifont=DejaVu\ Sans\ Mono\ 14 "Linux
 endif
 
@@ -77,6 +77,7 @@ let s:addon_list = [
     \'haskellmode-vim',
     \'YouCompleteMe',
     \'ctrlp',
+    \'github:mbbill/fencview',
     \'github:marijnh/tern_for_vim']
 
 "    \'neocomplcache',
@@ -125,3 +126,5 @@ endif
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
+
+au VimEnter *  NERDTree
