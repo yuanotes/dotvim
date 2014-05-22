@@ -35,6 +35,6 @@ nnoremap <silent> <C-x><C-y> :Unite history/yank<CR>
 nnoremap <silent> <C-x><C-t> :Unite -no-start-insert tab<CR>
 
 " CommandT mapping
-nnoremap <silent> <Leader>t  :call MyProjectPathCommand('CommandT @proj_dir', 'CommandT ./')<CR>
+nnoremap <silent> <Leader>t  :call MyProjectPathCommand('CtrlP @proj_dir', 'CtrlP ./')<CR>
 
 nnoremap <silent> <C-x>v :ConqueTermVSplit zsh<CR>

@@ -47,10 +47,10 @@ source $MYVIMPATH/vam.vim
 set wildignore+=*.pyc,.git
 
 " GUI font
-if system("uname") == "Darwin"
-    set guifont=Monaco:h14 "Mac
+if has('gui_macvim')
+    set guifont=Menlo\ Regular:h18 "Mac
     let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-elseif system("uname") == "Linux"
+elseif has("gui_gtk")
     set guifont=DejaVu\ Sans\ Mono\ 14 "Linux
 endif
 
@@ -72,15 +72,18 @@ let s:addon_list = [
     \'sudo',
     \'Tagbar',
     \'The_NERD_Commenter',
-    \'neocomplcache',
-    \'vimproc',
     \'Syntastic',
     \'vim-neatstatus',
-    \'haskellmode-vim']
+    \'haskellmode-vim',
+    \'YouCompleteMe',
+    \'ctrlp',
+    \'github:mbbill/fencview',
+    \'github:marijnh/tern_for_vim']
 
-let s:sensitive_list = ['Command-T']
+"    \'neocomplcache',
+"    \'vimproc',
 
-call vam#ActivateAddons(s:addon_list + s:sensitive_list)
+call vam#ActivateAddons(s:addon_list)
 
 " Lazy loading
 let ft_addons = {
@@ -98,14 +101,13 @@ au BufEnter *.hs compiler ghc
 let g:ghc="/usr/bin/ghc"
 let g:haddock_indexfiledir="~/.dotvim/vim-addons/haskellmode-vim/"
 
-
 " vim-jedi settins
 let g:jedi#popup_select_first = 0
 let g:jedi#use_tabs_not_buffers = 0
 
 " other settings
 source $MYVIMPATH/functions.vim
-source $MYVIMPATH/neocomplcache.vim
+" source $MYVIMPATH/neocomplcache.vim
 source $MYVIMPATH/keys.vim
 
 " Remove trailing whitespaces automatically
@@ -120,4 +122,3 @@ endif
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
-
