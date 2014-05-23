@@ -27,9 +27,6 @@ set relativenumber
 syntax on
 filetype plugin indent on
 
-" Color scheme
-colorscheme evening
-
 " go to last edit position when opening a file
 autocmd BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -59,13 +56,10 @@ let g:syntastic_javascript_jslint_conf="--browser --regexp --es5 --nomen --evil 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-" JS beautify
-let g:jsbeautify = {"jslint_happy":"true"}
 " Addons list
 let s:addon_list = [
     \'Conque_Shell',
     \'unite',
-    \'Zenburn',
     \'The_NERD_tree',
     \'fugitive',
     \'quickrun%3146',
@@ -78,6 +72,7 @@ let s:addon_list = [
     \'YouCompleteMe',
     \'ctrlp',
     \'github:mbbill/fencview',
+    \'github:flazz/vim-colorschemes',
     \'github:marijnh/tern_for_vim']
 
 "    \'neocomplcache',
@@ -90,7 +85,7 @@ let ft_addons = {
     \ 'go': ['github:uggedal/go-vim'],
     \ 'html': ['ZenCoding'],
     \ 'javascript': ['vim-jsbeautify'],
-    \ 'python': ['jedi-vim', 'github:hynek/vim-python-pep8-indent'],
+    \ 'python': ['github:hynek/vim-python-pep8-indent'],
     \ 'less': ['vim-less']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
@@ -105,10 +100,6 @@ let hs_highlight_debug = 1
 let hs_allow_hash_operator = 1
 "let lhs_markup = tex
 
-" vim-jedi settins
-let g:jedi#popup_select_first = 0
-let g:jedi#use_tabs_not_buffers = 0
-
 " other settings
 source $MYVIMPATH/functions.vim
 " source $MYVIMPATH/neocomplcache.vim
@@ -117,14 +108,20 @@ source $MYVIMPATH/keys.vim
 " Remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Zenburn settings
-let g:zenburn_force_dark_Background = 1
 if has('gui_running') || $TERM=='xterm-256color'
-     colorscheme zenburn
+    colorscheme jellybeans
+else
+    colorscheme evening
 endif
 
 if filereadable(expand("$MYVIMPATH/custom.vim"))
     source $MYVIMPATH/custom.vim
 endif
 
-au VimEnter *  NERDTree
+" JSBeautify settings
+let g:editorconfig_Beautifier=expand("$MYVIMPATH") . "/jsbeautifier_config"
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+  " for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+  " for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
