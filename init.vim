@@ -72,9 +72,7 @@ let s:addon_list = [
     \'YouCompleteMe',
     \'ctrlp',
     \'github:mbbill/fencview',
-    \'github:flazz/vim-colorschemes',
-    \'github:marijnh/tern_for_vim']
-
+    \'github:flazz/vim-colorschemes']
 "    \'neocomplcache',
 "    \'vimproc',
 
@@ -84,7 +82,7 @@ call vam#ActivateAddons(s:addon_list)
 let ft_addons = {
     \ 'go': ['github:uggedal/go-vim'],
     \ 'html': ['ZenCoding'],
-    \ 'javascript': ['vim-jsbeautify'],
+    \ 'javascript': ['vim-jsbeautify', 'github:marijnh/tern_for_vim'],
     \ 'python': ['github:hynek/vim-python-pep8-indent'],
     \ 'less': ['vim-less']
     \ }
