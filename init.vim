@@ -58,8 +58,8 @@ let g:syntastic_warning_symbol='⚠'
 
 " Addons list
 let s:addon_list = [
-    \'Conque_Shell',
     \'unite',
+    \'github:Shougo/neomru.vim',
     \'The_NERD_tree',
     \'fugitive',
     \'quickrun%3146',
@@ -69,12 +69,11 @@ let s:addon_list = [
     \'Syntastic',
     \'vim-neatstatus',
     \'haskellmode-vim',
-    \'YouCompleteMe',
     \'ctrlp',
     \'github:mbbill/fencview',
-    \'github:flazz/vim-colorschemes']
-"    \'neocomplcache',
-"    \'vimproc',
+    \'github:flazz/vim-colorschemes',
+    \'neocomplete',
+    \'vimproc']
 
 call vam#ActivateAddons(s:addon_list)
 
@@ -94,9 +93,13 @@ au BufEnter *.hs compiler ghc
 let g:ghc="/usr/bin/ghc"
 let g:haddock_indexfiledir="~/.dotvim/vim-addons/haskellmode-vim/"
 
+" TernJs
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
+
 " other settings
 source $MYVIMPATH/functions.vim
-" source $MYVIMPATH/neocomplcache.vim
+source $MYVIMPATH/neocomplete.vim
 source $MYVIMPATH/keys.vim
 
 " Remove trailing whitespaces automatically

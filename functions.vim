@@ -7,7 +7,7 @@ def get_project_dir(path):
     for project_mark in [".vimproj", ".git", ".bzr"]:
         while not find_project_file:
             files = os.listdir(path)
-            if name in files:
+            if project_mark in files:
                 find_project_file = True
             else:
                 path = os.path.dirname(path)
@@ -26,7 +26,7 @@ endfunction
 function! MyProjectPathCommand(command_string, command_string_alt)
     let l:cur_dir = expand("%:p:h")
     call MyGetProjectPath(l:cur_dir)
-    echo g:vim_proj_dir
+    "echo g:vim_proj_dir
     if exists("g:vim_proj_dir") && !empty(g:vim_proj_dir)
         let l:command_str = substitute(a:command_string, '@proj_dir', g:vim_proj_dir, 'g')
         execute l:command_str
