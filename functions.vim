@@ -4,7 +4,7 @@ import os
 import vim
 def get_project_dir(path):
     find_project_file = False
-    for project_mark in [".vimproj", ".git", ".bzr"]:
+    for project_mark in [".tern-project", ".vimproj", ".git", ".bzr"]:
         while not find_project_file:
             files = os.listdir(path)
             if project_mark in files:
