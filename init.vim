@@ -56,26 +56,27 @@ let g:syntastic_javascript_jslint_conf="--browser --regexp --es5 --nomen --evil 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+
 " Addons list
 let s:addon_list = [
-    \'unite',
-    \'github:Shougo/neomru.vim',
-    \'The_NERD_tree',
-    \'fugitive',
-    \'quickrun%3146',
-    \'sudo',
-    \'Tagbar',
-    \'The_NERD_Commenter',
-    \'Syntastic',
-    \'vim-neatstatus',
-    \'haskellmode-vim',
-    \'ctrlp',
-    \'github:mbbill/fencview',
-    \'github:flazz/vim-colorschemes',
-    \'neocomplete',
-    \'vimproc']
+            \'vimproc',
+            \'neocomplete',
+            \'unite',
+            \'github:Shougo/neomru.vim',
+            \'The_NERD_tree',
+            \'fugitive',
+            \'quickrun%3146',
+            \'sudo',
+            \'Tagbar',
+            \'The_NERD_Commenter',
+            \'Syntastic',
+            \'vim-neatstatus',
+            \'ctrlp',
+            \'github:mbbill/fencview',
+            \'github:flazz/vim-colorschemes']
 
 call vam#ActivateAddons(s:addon_list)
+
 
 " Lazy loading
 let ft_addons = {
@@ -83,7 +84,8 @@ let ft_addons = {
     \ 'html': ['ZenCoding'],
     \ 'javascript': ['vim-jsbeautify', 'github:marijnh/tern_for_vim'],
     \ 'python': ['github:hynek/vim-python-pep8-indent'],
-    \ 'less': ['vim-less']
+    \ 'less': ['vim-less'],
+    \ 'haskell': ['haskellmode-vim']
     \ }
 au FileType * for l in values(filter(copy(ft_addons), string(expand('<amatch>')).' =~ v:key')) | call vam#ActivateAddons(l, {'force_loading_plugins_now':1}) | endfor
 
@@ -107,7 +109,7 @@ source $MYVIMPATH/keys.vim
 autocmd BufWritePre * :%s/\s\+$//e
 
 if has('gui_running') || $TERM=='xterm-256color'
-    colorscheme jellybeans
+    colorscheme Monokai-chris
 else
     colorscheme evening
 endif
