@@ -99,6 +99,7 @@ let g:tern_show_argument_hints='on_hold'
 
 " other settings
 source $MYVIMPATH/functions.vim
+source $MYVIMPATH/unite.vim
 source $MYVIMPATH/neocomplete.vim
 source $MYVIMPATH/keys.vim
 
